@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
 
     @IBAction func calculateButton(sender: AnyObject) {
-        let catAgeVal: Int = catAge.text.toInt()!
+        let catAgeVal: Int = catAge.text.toInt()! * 7
         displayLabel?.text = "\(catAgeVal) cat years old"
     }
 
