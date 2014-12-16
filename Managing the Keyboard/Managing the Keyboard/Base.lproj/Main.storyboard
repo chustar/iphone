@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Managing_the_Keyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-bc-Fhe">
+                                <rect key="frame" x="16" y="198" width="568" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="TQZ-aZ-5St"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="N11-5W-JfH">
+                                <rect key="frame" x="16" y="106" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="cAG-qE-MHQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSp-vD-3qM">
+                                <rect key="frame" x="211" y="144" width="179" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="VVt-zu-TSM"/>
+                                    <constraint firstAttribute="height" constant="46" id="tXO-Ls-s5e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Update Text"/>
+                                <connections>
+                                    <action selector="updateText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jrq-Be-tcN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oSp-vD-3qM" firstAttribute="top" secondItem="N11-5W-JfH" secondAttribute="bottom" constant="8" id="3aU-YZ-wQe"/>
+                            <constraint firstItem="rMo-bc-Fhe" firstAttribute="top" secondItem="oSp-vD-3qM" secondAttribute="bottom" constant="8" id="5Cc-kP-UbC"/>
+                            <constraint firstItem="N11-5W-JfH" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="86" id="7tm-Ev-z0A"/>
+                            <constraint firstItem="rMo-bc-Fhe" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Io2-rF-axu"/>
+                            <constraint firstItem="rMo-bc-Fhe" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Jae-tz-b1L"/>
+                            <constraint firstItem="rMo-bc-Fhe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bMU-R3-QZV"/>
+                            <constraint firstAttribute="centerX" secondItem="oSp-vD-3qM" secondAttribute="centerX" id="gHN-hf-NfT"/>
+                            <constraint firstItem="rMo-bc-Fhe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ghm-fv-ntx"/>
+                            <constraint firstItem="N11-5W-JfH" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qqT-34-fTS"/>
+                            <constraint firstItem="N11-5W-JfH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="uvX-qT-va3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="rMo-bc-Fhe" id="vmq-GR-o5c"/>
+                        <outlet property="textField" destination="N11-5W-JfH" id="rrw-H4-6u2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
