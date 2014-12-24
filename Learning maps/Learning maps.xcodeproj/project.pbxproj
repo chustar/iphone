@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEDA38461A4B05590038E67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA38451A4B05590038E67F /* AppDelegate.swift */; };
+		CEDA38481A4B05590038E67F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA38471A4B05590038E67F /* ViewController.swift */; };
+		CEDA384B1A4B05590038E67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDA38491A4B05590038E67F /* Main.storyboard */; };
+		CEDA384D1A4B05590038E67F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDA384C1A4B05590038E67F /* Images.xcassets */; };
+		CEDA38501A4B05590038E67F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA384E1A4B05590038E67F /* LaunchScreen.xib */; };
+		CEDA385C1A4B05590038E67F /* Learning_mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA385B1A4B05590038E67F /* Learning_mapsTests.swift */; };
+		CEDA38661A4B05800038E67F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA38651A4B05800038E67F /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEDA38561A4B05590038E67F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEDA38381A4B05590038E67F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEDA383F1A4B05590038E67F;
+			remoteInfo = "Learning maps";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEDA38401A4B05590038E67F /* Learning maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEDA38441A4B05590038E67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDA38451A4B05590038E67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEDA38471A4B05590038E67F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEDA384A1A4B05590038E67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEDA384C1A4B05590038E67F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEDA384F1A4B05590038E67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CEDA38551A4B05590038E67F /* Learning mapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learning mapsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEDA385A1A4B05590038E67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDA385B1A4B05590038E67F /* Learning_mapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning_mapsTests.swift; sourceTree = "<group>"; };
+		CEDA38651A4B05800038E67F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEDA383D1A4B05590038E67F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDA38661A4B05800038E67F /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEDA38521A4B05590038E67F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEDA38371A4B05590038E67F = {
+			isa = PBXGroup;
+			children = (
+				CEDA38651A4B05800038E67F /* MapKit.framework */,
+				CEDA38421A4B05590038E67F /* Learning maps */,
+				CEDA38581A4B05590038E67F /* Learning mapsTests */,
+				CEDA38411A4B05590038E67F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEDA38411A4B05590038E67F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA38401A4B05590038E67F /* Learning maps.app */,
+				CEDA38551A4B05590038E67F /* Learning mapsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEDA38421A4B05590038E67F /* Learning maps */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA38451A4B05590038E67F /* AppDelegate.swift */,
+				CEDA38471A4B05590038E67F /* ViewController.swift */,
+				CEDA38491A4B05590038E67F /* Main.storyboard */,
+				CEDA384C1A4B05590038E67F /* Images.xcassets */,
+				CEDA384E1A4B05590038E67F /* LaunchScreen.xib */,
+				CEDA38431A4B05590038E67F /* Supporting Files */,
+			);
+			path = "Learning maps";
+			sourceTree = "<group>";
+		};
+		CEDA38431A4B05590038E67F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA38441A4B05590038E67F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEDA38581A4B05590038E67F /* Learning mapsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA385B1A4B05590038E67F /* Learning_mapsTests.swift */,
+				CEDA38591A4B05590038E67F /* Supporting Files */,
+			);
+			path = "Learning mapsTests";
+			sourceTree = "<group>";
+		};
+		CEDA38591A4B05590038E67F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA385A1A4B05590038E67F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEDA383F1A4B05590038E67F /* Learning maps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEDA385F1A4B05590038E67F /* Build configuration list for PBXNativeTarget "Learning maps" */;
+			buildPhases = (
+				CEDA383C1A4B05590038E67F /* Sources */,
+				CEDA383D1A4B05590038E67F /* Frameworks */,
+				CEDA383E1A4B05590038E67F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Learning maps";
+			productName = "Learning maps";
+			productReference = CEDA38401A4B05590038E67F /* Learning maps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEDA38541A4B05590038E67F /* Learning mapsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEDA38621A4B05590038E67F /* Build configuration list for PBXNativeTarget "Learning mapsTests" */;
+			buildPhases = (
+				CEDA38511A4B05590038E67F /* Sources */,
+				CEDA38521A4B05590038E67F /* Frameworks */,
+				CEDA38531A4B05590038E67F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEDA38571A4B05590038E67F /* PBXTargetDependency */,
+			);
+			name = "Learning mapsTests";
+			productName = "Learning mapsTests";
+			productReference = CEDA38551A4B05590038E67F /* Learning mapsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEDA38381A4B05590038E67F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Chuma Nnaji";
+				TargetAttributes = {
+					CEDA383F1A4B05590038E67F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					CEDA38541A4B05590038E67F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = CEDA383F1A4B05590038E67F;
+					};
+				};
+			};
+			buildConfigurationList = CEDA383B1A4B05590038E67F /* Build configuration list for PBXProject "Learning maps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEDA38371A4B05590038E67F;
+			productRefGroup = CEDA38411A4B05590038E67F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEDA383F1A4B05590038E67F /* Learning maps */,
+				CEDA38541A4B05590038E67F /* Learning mapsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEDA383E1A4B05590038E67F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDA384B1A4B05590038E67F /* Main.storyboard in Resources */,
+				CEDA38501A4B05590038E67F /* LaunchScreen.xib in Resources */,
+				CEDA384D1A4B05590038E67F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEDA38531A4B05590038E67F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEDA383C1A4B05590038E67F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDA38481A4B05590038E67F /* ViewController.swift in Sources */,
+				CEDA38461A4B05590038E67F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEDA38511A4B05590038E67F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDA385C1A4B05590038E67F /* Learning_mapsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEDA38571A4B05590038E67F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEDA383F1A4B05590038E67F /* Learning maps */;
+			targetProxy = CEDA38561A4B05590038E67F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEDA38491A4B05590038E67F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEDA384A1A4B05590038E67F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEDA384E1A4B05590038E67F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEDA384F1A4B05590038E67F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEDA385D1A4B05590038E67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEDA385E1A4B05590038E67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEDA38601A4B05590038E67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Learning maps/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEDA38611A4B05590038E67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Learning maps/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CEDA38631A4B05590038E67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Learning mapsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Learning maps.app/Learning maps";
+			};
+			name = Debug;
+		};
+		CEDA38641A4B05590038E67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Learning mapsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Learning maps.app/Learning maps";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEDA383B1A4B05590038E67F /* Build configuration list for PBXProject "Learning maps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEDA385D1A4B05590038E67F /* Debug */,
+				CEDA385E1A4B05590038E67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEDA385F1A4B05590038E67F /* Build configuration list for PBXNativeTarget "Learning maps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEDA38601A4B05590038E67F /* Debug */,
+				CEDA38611A4B05590038E67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CEDA38621A4B05590038E67F /* Build configuration list for PBXNativeTarget "Learning mapsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEDA38631A4B05590038E67F /* Debug */,
+				CEDA38641A4B05590038E67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEDA38381A4B05590038E67F /* Project object */;
+}
