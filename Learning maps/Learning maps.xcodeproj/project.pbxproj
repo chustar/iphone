@@ -14,6 +14,7 @@
 		CEDA38501A4B05590038E67F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDA384E1A4B05590038E67F /* LaunchScreen.xib */; };
 		CEDA385C1A4B05590038E67F /* Learning_mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA385B1A4B05590038E67F /* Learning_mapsTests.swift */; };
 		CEDA38661A4B05800038E67F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA38651A4B05800038E67F /* MapKit.framework */; };
+		CEDA38681A4B148A0038E67F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA38671A4B148A0038E67F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CEDA385A1A4B05590038E67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDA385B1A4B05590038E67F /* Learning_mapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning_mapsTests.swift; sourceTree = "<group>"; };
 		CEDA38651A4B05800038E67F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEDA38671A4B148A0038E67F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDA38681A4B148A0038E67F /* CoreLocation.framework in Frameworks */,
 				CEDA38661A4B05800038E67F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +65,7 @@
 		CEDA38371A4B05590038E67F = {
 			isa = PBXGroup;
 			children = (
+				CEDA38671A4B148A0038E67F /* CoreLocation.framework */,
 				CEDA38651A4B05800038E67F /* MapKit.framework */,
 				CEDA38421A4B05590038E67F /* Learning maps */,
 				CEDA38581A4B05590038E67F /* Learning mapsTests */,
