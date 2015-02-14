@@ -8,19 +8,23 @@
 
 import UIKit
 
-class TinderViewController: UIViewController {
+class TinderViewController: UIViewController
+{
 
     var xFromCenter: CGFloat = 0
     var userNames: [String] = []
     var userImages: [NSData] = []
     var targetUser = 0
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        PFGeoPoint.geoPointForCurrentLocationInBackground {
+        PFGeoPoint.geoPointForCurrentLocationInBackground
+        {
             (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
-            if error == nil {
+            if error == nil
+            {
                 println(geoPoint)
 
                 var currentUser = PFUser.currentUser()
@@ -29,18 +33,20 @@ class TinderViewController: UIViewController {
                 var query = PFUser.query()
                 query.whereKey("location", nearGeoPoint: geoPoint)
                 query.limit = 10
-                query.findObjectsInBackgroundWithBlock({
+                query.findObjectsInBackgroundWithBlock(
+                {
                     (users, error) -> Void in
-                    if error == nil {
-                        for user in users {
+                    if error == nil
+                    {
+                        for user in users
+                        {
                             if user["gender"] as String == currentUser["interestedIn"] as NSString
-                                && user.username == currentUser.username {
-                                query.whereKey("username", notEqualTo: currentUser.username)
-                                query.whereKey("gender", equalTo: currentUser["interestedIn"])
-
+                                && user.username != currentUser.username
+                            {
+                                println(user)
                                 self.userNames.append(user.username)
                                 self.userImages.append(user["image"] as NSData)
-                                }
+                            }
                         }
 
                         self.createImage(UIImage(data: self.userImages[0])!)
@@ -53,7 +59,8 @@ class TinderViewController: UIViewController {
         createImage(UIImage(named: "placeholder.jpg")!)
     }
 
-    func wasDragged(gesture: UIPanGestureRecognizer) {
+    func wasDragged(gesture: UIPanGestureRecognizer)
+    {
         var label = gesture.view!
 
         let translation = gesture.translationInView(self.view)
@@ -68,13 +75,17 @@ class TinderViewController: UIViewController {
         var scale: CGAffineTransform = CGAffineTransformScale(rotation, scaleAmount, scaleAmount)
         label.transform = scale
 
-        if label.center.x < 100 {
+        if label.center.x < 100
+        {
             println("Not chosen")
-        } else if label.center.x > self.view.bounds.width - 100 {
+        }
+        else if label.center.x > self.view.bounds.width - 100
+        {
             println("Chosen")
         }
 
-        if gesture.state == UIGestureRecognizerState.Ended {
+        if gesture.state == UIGestureRecognizerState.Ended
+        {
             label.removeFromSuperview()
             xFromCenter = 0
 
@@ -82,16 +93,17 @@ class TinderViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    func createImage(image: UIImage) {
+    func createImage(image: UIImage)
+    {
         var userImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
         userImage.image = image
         userImage.contentMode = UIViewContentMode.ScaleAspectFit
-        //UILabel(frame: CGRectMake(self.view.bounds.width/2 - 100, self.view.bounds.height/2 - 50, 200, 100))
         self.view.addSubview(userImage)
 
         var gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
