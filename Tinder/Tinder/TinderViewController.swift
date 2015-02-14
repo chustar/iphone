@@ -11,6 +11,9 @@ import UIKit
 class TinderViewController: UIViewController {
 
     var xFromCenter: CGFloat = 0
+    var userNames: [String] = []
+    var userImages: [NSData] = []
+    var targetUser = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,44 +23,34 @@ class TinderViewController: UIViewController {
             if error == nil {
                 println(geoPoint)
 
-                var user = PFUser.currentUser()
-                user["location"] = geoPoint
-                user.save()
+                var currentUser = PFUser.currentUser()
+                currentUser["location"] = geoPoint
+
+                var query = PFUser.query()
+                query.whereKey("location", nearGeoPoint: geoPoint)
+                query.limit = 10
+                query.findObjectsInBackgroundWithBlock({
+                    (users, error) -> Void in
+                    if error == nil {
+                        for user in users {
+                            if user["gender"] as String == currentUser["interestedIn"] as NSString
+                                && user.username == currentUser.username {
+                                query.whereKey("username", notEqualTo: currentUser.username)
+                                query.whereKey("gender", equalTo: currentUser["interestedIn"])
+
+                                self.userNames.append(user.username)
+                                self.userImages.append(user["image"] as NSData)
+                                }
+                        }
+
+                        self.createImage(UIImage(data: self.userImages[0])!)
+                    }
+                })
+                currentUser.save()
             }
         }
 
-        /*
-        func addPerson(urlString: String) {
-            let urlRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: urlString)!)
-            NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: {
-                response, data, error in
-
-                var newUser = PFUser()
-                newUser["image"] = data
-                newUser["gender"] = rand() % 2 == 0 ? "male" : "female"
-                newUser["username"] = "user_\(rand() % 100)"
-                newUser.password = "password"
-                var location = PFGeoPoint(latitude: Double(37 + rand() % 20), longitude: Double(-122 + rand() % 20))
-                newUser["location"] = location
-                newUser.signUp()
-            })
-        }
-
-        addPerson("https://3.googleusercontent.com/-Nw_kkLgPSTU/AAAAAAAAAAI/AAAAAAAAIro/UcKx1NcaXvY/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-7o4IH7LO1_0/AAAAAAAAAAI/AAAAAAAAAAA/96TwdZGmqGs/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-XI4jZo-OFaw/AAAAAAAAAAI/AAAAAAAAAZs/5f9lmMVwTug/s160-c-k-no/photo.jpg")
-        addPerson("https://3.googleusercontent.com/-CjDC-WSFsTU/AAAAAAAAAAI/AAAAAAAAA9M/_mFTZE-w2F0/s160-c-k-no/photo.jpg")
-        addPerson("https://3.googleusercontent.com/-XUnyaVoreT8/AAAAAAAAAAI/AAAAAAAAAAA/YXRzlCifPKM/s160-c-k-no/photo.jpg")
-        addPerson("https://6.googleusercontent.com/-JeQ7DzreBgU/AAAAAAAAAAI/AAAAAAAAAMc/FTS2z82Y0PU/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-XgdRr6PdTyo/AAAAAAAAAAI/AAAAAAAAAGs/nM643SLImjU/s160-c-k-no/photo.jpg")
-        addPerson("https://3.googleusercontent.com/-C5TrsIqCU2A/AAAAAAAAAAI/AAAAAAAAC7o/DTQdthyDiaM/s160-c-k-no/photo.jpg")
-        addPerson("https://6.googleusercontent.com/-H-oD42VkNNo/AAAAAAAAAAI/AAAAAAAAAE8/7CGY-Iz5Trw/s160-c-k-no/photo.jpg")
-        addPerson("https://3.googleusercontent.com/-OzZcEvVuh4Y/AAAAAAAAAAI/AAAAAAAAAAA/zJTMLSpMODg/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-kNdgn2USofM/AAAAAAAAAAI/AAAAAAAAAPc/CqRWdM7i6mU/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-RMhQHcPzrnw/AAAAAAAAAAI/AAAAAAAACLo/kAFanjRZUm8/s160-c-k-no/photo.jpg")
-        addPerson("https://5.googleusercontent.com/-jZRoUqkmtoE/AAAAAAAAAAI/AAAAAAAAAAA/UT5KpGHK2c4/s160-c-k-no/photo.jpg")
-        addPerson("https://6.googleusercontent.com/-0B9XPsvsO24/AAAAAAAAAAI/AAAAAAAAAro/ng_J0xJLZUw/s160-c-k-no/photo.jpg")
-        */
+        createImage(UIImage(named: "placeholder.jpg")!)
     }
 
     func wasDragged(gesture: UIPanGestureRecognizer) {
@@ -82,12 +75,10 @@ class TinderViewController: UIViewController {
         }
 
         if gesture.state == UIGestureRecognizerState.Ended {
+            label.removeFromSuperview()
             xFromCenter = 0
-            label.center = CGPointMake(self.view.bounds.width/2, self.view.bounds.height/2)
-            rotation = CGAffineTransformMakeRotation(0)
-            scaleAmount = 1
-            scale = CGAffineTransformScale(rotation, scaleAmount, scaleAmount)
-            label.transform = scale
+
+            createImage(UIImage(data: userImages[++self.targetUser])!)
         }
     }
 
@@ -95,7 +86,18 @@ class TinderViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func createImage(image: UIImage) {
+        var userImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        userImage.image = image
+        userImage.contentMode = UIViewContentMode.ScaleAspectFit
+        //UILabel(frame: CGRectMake(self.view.bounds.width/2 - 100, self.view.bounds.height/2 - 50, 200, 100))
+        self.view.addSubview(userImage)
+
+        var gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
+        userImage.addGestureRecognizer(gesture)
+        userImage.userInteractionEnabled = true
+    }
 
     /*
     // MARK: - Navigation
