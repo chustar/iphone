@@ -25,8 +25,6 @@ class TinderViewController: UIViewController
             (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
             if error == nil
             {
-                println(geoPoint)
-
                 var currentUser = PFUser.currentUser()
                 currentUser["location"] = geoPoint
 
@@ -43,7 +41,6 @@ class TinderViewController: UIViewController
                             if user["gender"] as String == currentUser["interestedIn"] as NSString
                                 && user.username != currentUser.username
                             {
-                                println(user)
                                 self.userNames.append(user.username)
                                 self.userImages.append(user["image"] as NSData)
                             }
@@ -55,41 +52,45 @@ class TinderViewController: UIViewController
                 currentUser.save()
             }
         }
-
-        createImage(UIImage(named: "placeholder.jpg")!)
     }
 
     func wasDragged(gesture: UIPanGestureRecognizer)
     {
-        var label = gesture.view!
+        var imageView = gesture.view!
 
         let translation = gesture.translationInView(self.view)
-        label.center = CGPoint(x: label.center.x + translation.x, y: label.center.y + translation.y)
+        imageView.center = CGPoint(x: imageView.center.x + translation.x, y: imageView.center.y + translation.y)
         gesture.setTranslation(CGPointZero, inView: self.view)
 
         xFromCenter += translation.x
-        println(xFromCenter)
-
         var rotation: CGAffineTransform = CGAffineTransformMakeRotation(xFromCenter / 200)
         var scaleAmount = min(50/abs(xFromCenter), 1)
         var scale: CGAffineTransform = CGAffineTransformScale(rotation, scaleAmount, scaleAmount)
-        label.transform = scale
+        imageView.transform = scale
 
-        if label.center.x < 100
+        if imageView.center.x < 100
         {
             println("Not chosen")
         }
-        else if label.center.x > self.view.bounds.width - 100
+        else if imageView.center.x > self.view.bounds.width - 100
         {
             println("Chosen")
         }
 
         if gesture.state == UIGestureRecognizerState.Ended
         {
-            label.removeFromSuperview()
-            xFromCenter = 0
+            imageView.removeFromSuperview()
 
-            createImage(UIImage(data: userImages[++self.targetUser])!)
+            self.targetUser++
+            if self.targetUser < self.userImages.count
+            {
+                xFromCenter = 0
+                createImage(UIImage(data: userImages[self.targetUser])!)
+            }
+            else
+            {
+                println("No more users")
+            }
         }
     }
 
