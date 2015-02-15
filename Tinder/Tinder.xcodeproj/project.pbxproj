@@ -25,6 +25,7 @@
 		CE4E7F731A8DA4B3004AC620 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E7F721A8DA4B3004AC620 /* SignUpViewController.swift */; };
 		CE4E7F751A8DAB4C004AC620 /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E7F741A8DAB4C004AC620 /* TinderViewController.swift */; };
 		CE4E7F771A8FBDD9004AC620 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE4E7F761A8FBDD9004AC620 /* placeholder.jpg */; };
+		CE667D051A911B02002FD220 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE667D041A911B02002FD220 /* ContactsTableViewController.swift */; };
 		CEB129F31A832305004F98D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB129F21A832305004F98D6 /* AppDelegate.swift */; };
 		CEB129F51A832305004F98D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB129F41A832305004F98D6 /* ViewController.swift */; };
 		CEB129F81A832305004F98D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB129F61A832305004F98D6 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		CE4E7F721A8DA4B3004AC620 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE4E7F741A8DAB4C004AC620 /* TinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
 		CE4E7F761A8FBDD9004AC620 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
+		CE667D041A911B02002FD220 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		CEB129ED1A832305004F98D6 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB129F11A832305004F98D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB129F21A832305004F98D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				CEB129F61A832305004F98D6 /* Main.storyboard */,
 				CE4E7F721A8DA4B3004AC620 /* SignUpViewController.swift */,
 				CE4E7F741A8DAB4C004AC620 /* TinderViewController.swift */,
+				CE667D041A911B02002FD220 /* ContactsTableViewController.swift */,
 				CEB129F91A832305004F98D6 /* Images.xcassets */,
 				CEB129FB1A832305004F98D6 /* LaunchScreen.xib */,
 				CEB129F01A832305004F98D6 /* Supporting Files */,
@@ -298,6 +301,7 @@
 			files = (
 				CE4E7F731A8DA4B3004AC620 /* SignUpViewController.swift in Sources */,
 				CEB129F51A832305004F98D6 /* ViewController.swift in Sources */,
+				CE667D051A911B02002FD220 /* ContactsTableViewController.swift in Sources */,
 				CE4E7F751A8DAB4C004AC620 /* TinderViewController.swift in Sources */,
 				CEB129F31A832305004F98D6 /* AppDelegate.swift in Sources */,
 			);

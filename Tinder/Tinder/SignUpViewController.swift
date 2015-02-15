@@ -22,7 +22,9 @@ class SignUpViewController: UIViewController {
             user["interestedIn"] = "male"
         }
 
-        user.saveInBackgroundWithBlock(nil)
+        user.save()
+
+        self.performSegueWithIdentifier("signUp", sender: self)
     }
 
     override func viewDidLoad() {
@@ -49,6 +51,7 @@ class SignUpViewController: UIViewController {
 
                 user["gender"] = result["gender"]
                 user["name"] = result["name"]
+                user["email"] = result["email"]
                 user.saveInBackgroundWithBlock(nil)
             })
         })

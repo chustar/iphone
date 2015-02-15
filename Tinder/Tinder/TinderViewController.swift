@@ -36,17 +36,29 @@ class TinderViewController: UIViewController
                     (users, error) -> Void in
                     if error == nil
                     {
+                        var accepted = [String]()
+                        var rejected = [String]()
+                        if PFUser.currentUser()["accepted"] != nil {
+                            accepted = PFUser.currentUser()["accepted"] as [String]
+                        }
+                        if PFUser.currentUser()["rejected"] != nil {
+                            rejected = PFUser.currentUser()["rejected"] as [String]
+                        }
                         for user in users
                         {
-                            if user["gender"] as String == currentUser["interestedIn"] as NSString
+                            if user["gender"] as String == currentUser["interestedIn"] as String
                                 && user.username != currentUser.username
+                                && !contains(accepted, user.username)
+                                && !contains(rejected, user.username)
                             {
                                 self.userNames.append(user.username)
                                 self.userImages.append(user["image"] as NSData)
                             }
                         }
 
-                        self.createImage(UIImage(data: self.userImages[0])!)
+                        if self.userImages.count > 0 {
+                            self.createImage(UIImage(data: self.userImages[0])!)
+                        }
                     }
                 })
                 currentUser.save()
@@ -68,20 +80,26 @@ class TinderViewController: UIViewController
         var scale: CGAffineTransform = CGAffineTransformScale(rotation, scaleAmount, scaleAmount)
         imageView.transform = scale
 
-        if imageView.center.x < 100
-        {
-            println("Not chosen")
-        }
-        else if imageView.center.x > self.view.bounds.width - 100
-        {
-            println("Chosen")
-        }
-
         if gesture.state == UIGestureRecognizerState.Ended
         {
+            if imageView.center.x < 100
+            {
+
+                PFUser.currentUser().addUniqueObject(self.userNames[self.targetUser], forKey: "rejected")
+                PFUser.currentUser().save()
+                self.targetUser++
+                println("Chosen")
+            }
+            else if imageView.center.x > self.view.bounds.width - 100
+            {
+                PFUser.currentUser().addUniqueObject(self.userNames[self.targetUser], forKey: "accepted")
+                PFUser.currentUser().save()
+                self.targetUser++
+                println("Chosen")
+            }
+
             imageView.removeFromSuperview()
 
-            self.targetUser++
             if self.targetUser < self.userImages.count
             {
                 xFromCenter = 0
