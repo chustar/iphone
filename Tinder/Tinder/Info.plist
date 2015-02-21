@@ -11,7 +11,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>FacebookAppID</key>
-	<string>711970872255239</string>
+	<string></string>
 	<key>FacebookDisplayName</key>
 	<string>Tinder</string>
 	<key>CFBundleURLTypes</key>
@@ -19,7 +19,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb711970872255239</string>
+				<string></string>
 			</array>
 		</dict>
 	</array>
